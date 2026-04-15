@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #eef0ff, #e4f6ff);
+  min-height: 100vh;
+}
+
+.signup-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+}
+
+.signup-card {
+  width: 100%;
+  max-width: 430px;
+  background-color: #ffffff;
+  border-radius: 22px;
+  padding: 28px 26px 22px;
+  box-shadow: 0 20px 35px rgba(105, 105, 160, 0.18);
+  text-align: center;
+}
+
+.top-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 18px;
+  border-radius: 16px;
+  background: linear-gradient(to bottom right, #a02cff, #4e67ff);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  box-shadow: 0 10px 20px rgba(120, 70, 255, 0.25);
+}
+
+.signup-card h1 {
+  font-size: 34px;
+  color: #6f43ff;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #777b88;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+.avatar-title {
+  font-size: 14px;
+  color: #4e4e57;
+  margin-bottom: 14px;
+}
+
+.avatar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.avatar-box {
+  height: 58px;
+  border-radius: 14px;
+  background-color: #f4f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.avatar-box:hover {
+  transform: translateY(-2px);
+}
+
+.avatar-box.active {
+  border: 2px solid #ffd34d;
+  background-color: #fff8df;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  color: #40404a;
+  margin-bottom: 7px;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #e5e5eb;
+  border-radius: 14px;
+  padding: 0 16px;
+  font-size: 14px;
+  outline: none;
+  background-color: #fafafa;
+}
+
+.form-group input:focus {
+  border-color: #8a46ff;
+}
+
+.main-btn {
+  width: 100%;
+  border: none;
+  height: 54px;
+  border-radius: 14px;
+  background: linear-gradient(to right, #9d2dff, #3568ff);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 6px;
+  box-shadow: 0 10px 18px rgba(106, 76, 255, 0.22);
+  transition: 0.3s;
+}
+
+.main-btn:hover {
+  transform: translateY(-2px);
+}
+
+.login-text {
+  margin-top: 18px;
+  font-size: 13px;
+  color: #7a7a84;
+}
+
+.login-text span {
+  color: #6f43ff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.divider {
+  height: 1px;
+  background-color: #ececf2;
+  margin: 22px 0 16px;
+}
+
+.role-text {
+  font-size: 13px;
+  color: #6d6d77;
+  margin-bottom: 14px;
+}
+
+.role-buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+
+.role-btn {
+  flex: 1;
+  height: 44px;
+  border: none;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.parent-btn {
+  background-color: #eef3ff;
+  color: #4a74ff;
+}
+
+.teacher-btn {
+  background-color: #eaf8ef;
+  color: #2aaf5f;
+}
+
+.back-home {
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+.back-home a {
+  color: #7b45ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-home a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 480px) {
+  .signup-card {
+    padding: 24px 18px 20px;
+  }
+
+  .signup-card h1 {
+    font-size: 28px;
+  }
+
+  .avatar-grid {
+    gap: 10px;
+  }
+
+  .avatar-box {
+    height: 54px;
+    font-size: 24px;
+  }
+
+  .role-buttons {
+    flex-direction: column;
+  }
+}
