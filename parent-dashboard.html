@@ -10,10 +10,18 @@
     <style>
         body { font-family: 'Nunito', sans-serif; background-color: #f8faff; overflow-x: hidden; }
         .sidebar-link.active { background-color: #eff6ff; color: #3b82f6; border-right: 4px solid #3b82f6; }
+        
+        /* أنيميشن الأشرطة */
         .progress-bar-fill { transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1); width: 0%; }
+        
+        /* نظام التبديل بين الصفحات */
         .page-section { display: none; animation: fadeIn 0.5s ease-out; }
         .page-section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* تنسيق زر "عرض كطفل" */
+        .btn-child-view { transition: all 0.3s ease; }
+        .btn-child-view:hover { transform: scale(1.05); filter: brightness(1.1); }
     </style>
 </head>
 <body class="flex min-h-screen">
@@ -41,7 +49,7 @@
             </a>
         </nav>
 
-        <div class="p-6 mt-auto">
+        <div class="p-6 mt-auto border-t border-gray-50">
             <a href="parent-login.html" class="flex items-center gap-4 p-4 text-red-400 font-bold hover:bg-red-50 rounded-xl transition-all">
                 <i class="fas fa-sign-out-alt"></i> Logout
             </a>
@@ -52,42 +60,75 @@
         
         <header class="flex justify-between items-center mb-10">
             <div>
-                <h1 class="text-2xl font-extrabold text-[#5c6bc0]">Welcome Back, <span id="parent-name">Parent</span>! 👋</h1>
-                <p class="text-gray-400 font-semibold" id="header-subtitle">Monitoring Student's coding journey.</p>
+                <h1 class="text-2xl font-extrabold text-[#5c6bc0]">Welcome Back, <span id="parent-name">Sarah Ahmed</span>! 👋</h1>
+                <p class="text-gray-400 font-semibold" id="header-subtitle">Monitoring <span class="text-blue-500 font-bold">Omar</span>'s coding journey.</p>
             </div>
+            
             <div class="flex items-center gap-4">
+                <a href="student-dashboard.html" class="btn-child-view flex items-center gap-2 bg-[#7c3aed] text-white px-5 py-2.5 rounded-full font-bold text-sm shadow-lg shadow-purple-100 transition-all">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>View as Child</span>
+                </a>
+
+                <button class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 text-gray-400 relative hover:bg-gray-50">
+                    <i class="fas fa-bell"></i>
+                    <span id="notification-dot" class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full"></span>
+                </button>
+
                 <div class="w-12 h-12 bg-blue-100 rounded-full border-2 border-white shadow-sm overflow-hidden">
-                    <img id="parent-avatar" src="https://ui-avatars.com/api/?name=Parent" alt="Profile">
+                    <img id="parent-avatar" src="https://ui-avatars.com/api/?name=Sarah+Ahmed&background=3b82f6&color=fff" alt="Profile">
                 </div>
             </div>
         </header>
 
         <div id="dashboard" class="page-section active">
             <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-                <div class="bg-white p-6 rounded-[30px] shadow-sm border border-gray-50 flex items-center gap-5">
+                <div class="bg-white p-6 rounded-[30px] shadow-sm border border-gray-50 flex items-center gap-5 transition-transform hover:scale-[1.02]">
                     <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center text-2xl"><i class="fas fa-bolt"></i></div>
                     <div><p class="text-gray-400 font-bold text-sm">Courses Completed</p><h3 id="stat-courses" class="text-2xl font-extrabold text-[#5c6bc0]">0</h3></div>
                 </div>
-                <div class="bg-white p-6 rounded-[30px] shadow-sm border border-gray-50 flex items-center gap-5">
+                <div class="bg-white p-6 rounded-[30px] shadow-sm border border-gray-50 flex items-center gap-5 transition-transform hover:scale-[1.02]">
                     <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl"><i class="fas fa-clock"></i></div>
                     <div><p class="text-gray-400 font-bold text-sm">Learning Hours</p><h3 id="stat-hours" class="text-2xl font-extrabold text-[#5c6bc0]">0h</h3></div>
                 </div>
-                <div class="bg-white p-6 rounded-[30px] shadow-sm border border-gray-50 flex items-center gap-5">
+                <div class="bg-white p-6 rounded-[30px] shadow-sm border border-gray-50 flex items-center gap-5 transition-transform hover:scale-[1.02]">
                     <div class="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-2xl flex items-center justify-center text-2xl"><i class="fas fa-trophy"></i></div>
                     <div><p class="text-gray-400 font-bold text-sm">Badges Earned</p><h3 id="stat-badges" class="text-2xl font-extrabold text-[#5c6bc0]">0</h3></div>
                 </div>
             </section>
 
             <section class="bg-white p-8 rounded-[40px] shadow-sm border border-gray-50 mb-10">
-                <h2 class="text-xl font-extrabold text-[#5c6bc0] mb-8">Learning Progress ! ✨</h2>
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-xl font-extrabold text-[#5c6bc0]">Learning Progress ! ✨</h2>
+                    <button onclick="showSection('progress', document.querySelectorAll('.sidebar-link')[1])" class="text-blue-600 font-bold hover:underline">View Details</button>
+                </div>
                 <div class="space-y-8" id="progress-container">
                     </div>
+            </section>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-blue-600 p-8 rounded-[40px] text-white flex justify-between items-center shadow-xl shadow-blue-100 transition-all hover:brightness-110">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Student Portal Access</h3>
+                        <p class="opacity-80 mb-4 text-sm">Switch to your child's learning view.</p>
+                        <a href="student-dashboard.html" class="bg-white text-blue-600 px-6 py-3 rounded-2xl font-extrabold hover:bg-blue-50 transition-all inline-block">Go to Student View</a>
+                    </div>
+                    <i class="fas fa-graduation-cap text-6xl opacity-20"></i>
+                </div>
+                <div class="bg-[#5c6bc0] p-8 rounded-[40px] text-white flex justify-between items-center shadow-xl shadow-indigo-100 transition-all hover:brightness-110">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Teacher Contact</h3>
+                        <p class="opacity-80 mb-4 text-sm">Send a message to the mentor.</p>
+                        <button class="bg-white text-[#5c6bc0] px-6 py-3 rounded-2xl font-extrabold hover:bg-gray-50 transition-all">Message Teacher</button>
+                    </div>
+                    <i class="fas fa-comment-dots text-6xl opacity-20"></i>
+                </div>
             </section>
         </div>
 
         <div id="progress" class="page-section">
             <div class="bg-white p-8 rounded-[40px] shadow-sm border border-gray-50">
-                <h2 class="text-2xl font-extrabold text-[#5c6bc0] mb-6">Detailed Skill Map</h2>
+                <h2 class="text-2xl font-extrabold text-[#5c6bc0] mb-8">Detailed Skill Map</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="detailed-skills">
                     </div>
             </div>
@@ -100,9 +141,9 @@
                     <table class="w-full text-left">
                         <thead>
                             <tr class="text-gray-400 border-b border-gray-50">
-                                <th class="pb-4 font-bold">Month</th>
-                                <th class="pb-4 font-bold">Activities</th>
-                                <th class="pb-4 font-bold">Status</th>
+                                <th class="pb-4 font-bold">Date Range</th>
+                                <th class="pb-4 font-bold">Lessons Completed</th>
+                                <th class="pb-4 font-bold">Grade</th>
                                 <th class="pb-4 font-bold">Action</th>
                             </tr>
                         </thead>
@@ -115,20 +156,17 @@
 
         <div id="settings" class="page-section">
             <div class="max-w-2xl bg-white p-8 rounded-[40px] shadow-sm border border-gray-50">
-                <h2 class="text-2xl font-extrabold text-[#5c6bc0] mb-8">Profile Settings</h2>
-                <form class="space-y-6" onsubmit="event.preventDefault(); alert('Settings Saved!');">
+                <h2 class="text-2xl font-extrabold text-[#5c6bc0] mb-8">Account Settings</h2>
+                <form class="space-y-6">
                     <div>
-                        <label class="block text-gray-400 font-bold mb-2">Parent Name</label>
-                        <input type="text" id="input-parent-name" class="w-full p-4 bg-gray-50 rounded-2xl border-none focus:ring-2 focus:ring-blue-500 outline-none">
+                        <label class="block text-gray-500 font-bold mb-2">Parent Name</label>
+                        <input type="text" id="input-parent-name" class="w-full p-4 bg-gray-50 rounded-2xl border-none focus:ring-2 focus:ring-blue-500 outline-none transition-all">
                     </div>
                     <div>
-                        <label class="block text-gray-400 font-bold mb-2">Email Address</label>
-                        <input type="email" value="parent@dandecode.com" class="w-full p-4 bg-gray-50 rounded-2xl border-none focus:ring-2 focus:ring-blue-500 outline-none">
+                        <label class="block text-gray-500 font-bold mb-2">Email</label>
+                        <input type="email" value="sarah.ahmed@email.com" class="w-full p-4 bg-gray-50 rounded-2xl border-none focus:ring-2 focus:ring-blue-500 outline-none transition-all">
                     </div>
-                    <div class="flex items-center gap-4">
-                        <button class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold shadow-lg hover:bg-blue-700 transition-all">Save Changes</button>
-                        <button type="button" class="text-gray-400 font-bold">Reset Password</button>
-                    </div>
+                    <button type="button" class="bg-blue-600 text-white px-10 py-4 rounded-2xl font-extrabold shadow-lg hover:bg-blue-700 transition-all">Update Profile</button>
                 </form>
             </div>
         </div>
@@ -136,7 +174,7 @@
     </main>
 
     <script>
-        // بيانات محاكية (Mock Data) جاهزة للتبديل بـ API
+        // 1. هيكل البيانات (Data Structure)
         const studentData = {
             parentName: "Sarah Ahmed",
             childName: "Omar",
@@ -146,56 +184,50 @@
             progress: [
                 { name: "Logic & Problem Solving", val: 92, color: "blue" },
                 { name: "Python Basics", val: 75, color: "purple" },
-                { name: "Game Design", val: 55, color: "green" },
-                { name: "Web Development", val: 30, color: "yellow" }
+                { name: "Game Design", val: 55, color: "green" }
             ],
             reports: [
-                { month: "March 2024", activities: "12 Lessons", status: "Completed" },
-                { month: "February 2024", activities: "10 Lessons", status: "Completed" },
-                { month: "January 2024", activities: "8 Lessons", status: "Completed" }
+                { date: "April 1-15, 2026", count: "4 Lessons", grade: "A+" },
+                { date: "March 2026", count: "12 Lessons", grade: "A" },
+                { date: "February 2026", count: "10 Lessons", grade: "B+" }
             ]
         };
 
-        // وظيفة التنقل بين الأقسام
-        function showSection(sectionId, element) {
-            // إخفاء كل الأقسام
+        // 2. وظيفة التبديل بين الأقسام (Section Navigator)
+        function showSection(sectionId, navElement) {
             document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
-            // إظهار القسم المطلوب
             document.getElementById(sectionId).classList.add('active');
             
-            // تحديث حالة القائمة الجانبية
             document.querySelectorAll('.sidebar-link').forEach(l => {
                 l.classList.remove('active');
                 l.classList.add('text-gray-400');
             });
-            element.classList.add('active');
-            element.classList.remove('text-gray-400');
+            navElement.classList.add('active');
+            navElement.classList.remove('text-gray-400');
 
-            // تحديث العنوان الفرعي بناءً على القسم
+            // تغيير العنوان في الهيدر بناءً على الصفحة
             const subtitle = document.getElementById('header-subtitle');
-            if(sectionId === 'dashboard') subtitle.innerText = `Monitoring ${studentData.childName}'s coding journey.`;
-            else if(sectionId === 'progress') subtitle.innerText = "Detailed analysis of every coding skill.";
-            else if(sectionId === 'reports') subtitle.innerText = "Download and view performance history.";
-            else if(sectionId === 'settings') subtitle.innerText = "Manage your account preferences.";
+            if(sectionId === 'dashboard') subtitle.innerHTML = `Monitoring <span class="text-blue-500 font-bold">${studentData.childName}</span>'s coding journey.`;
+            else subtitle.innerText = `View and manage ${sectionId} details here.`;
         }
 
-        // تحديث البيانات ديناميكياً
-        function initDashboard() {
+        // 3. حقن البيانات وتحديث الواجهة (Initialization)
+        function initApp() {
+            // تحديث نصوص الهوية
             document.getElementById('parent-name').innerText = studentData.parentName;
             document.getElementById('input-parent-name').value = studentData.parentName;
-            document.getElementById('parent-avatar').src = `https://ui-avatars.com/api/?name=${studentData.parentName}&background=3b82f6&color=fff`;
 
-            // إحصائيات الداش بورد
+            // تحديث الإحصائيات (عدادات متحركة)
             animateValue("stat-courses", 0, studentData.coursesCompleted, 1000);
             animateValue("stat-hours", 0, studentData.learningHours, 1000, "h");
             animateValue("stat-badges", 0, studentData.badgesEarned, 1000);
 
-            // بناء أشرطة التقدم
+            // بناء أشرطة التقدم والمهارات التفصيلية
             const container = document.getElementById('progress-container');
             const detailedContainer = document.getElementById('detailed-skills');
             
             studentData.progress.forEach(p => {
-                // للداش بورد
+                // شريط التقدم في الداش بورد
                 container.innerHTML += `
                     <div>
                         <div class="flex justify-between mb-3 font-bold">
@@ -207,15 +239,14 @@
                         </div>
                     </div>`;
 
-                // لصفحة الـ Progress التفصيلية
+                // بطاقة مهارة تفصيلية
                 detailedContainer.innerHTML += `
-                    <div class="p-6 bg-gray-50 rounded-[30px] border border-gray-100">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-${p.color}-500 shadow-sm"><i class="fas fa-check-circle"></i></div>
-                            <h4 class="font-bold text-gray-700">${p.name}</h4>
+                    <div class="p-6 bg-gray-50 rounded-[30px] border border-gray-100 flex items-center justify-between">
+                        <div>
+                            <h4 class="font-bold text-gray-700 mb-1">${p.name}</h4>
+                            <p class="text-sm text-gray-400">Mastery Level</p>
                         </div>
-                        <div class="text-3xl font-black text-gray-800 mb-2">${p.val}%</div>
-                        <p class="text-sm text-gray-400">Mastery Level reached</p>
+                        <div class="text-2xl font-black text-${p.color}-600">${p.val}%</div>
                     </div>`;
             });
 
@@ -224,15 +255,15 @@
             studentData.reports.forEach(r => {
                 table.innerHTML += `
                     <tr class="border-b border-gray-50 hover:bg-gray-50 transition-all">
-                        <td class="py-6 font-bold text-gray-700">${r.month}</td>
-                        <td class="py-6 text-gray-500">${r.activities}</td>
-                        <td class="py-6"><span class="bg-green-100 text-green-600 px-4 py-1 rounded-full text-xs font-bold">${r.status}</span></td>
-                        <td class="py-6"><button class="text-blue-500 font-bold"><i class="fas fa-download mr-2"></i>PDF</button></td>
+                        <td class="py-6 font-bold text-gray-700">${r.date}</td>
+                        <td class="py-6 text-gray-500">${r.count}</td>
+                        <td class="py-6"><span class="bg-green-100 text-green-600 px-4 py-1 rounded-full text-xs font-bold">${r.grade}</span></td>
+                        <td class="py-6"><button class="text-blue-500 font-bold hover:underline"><i class="fas fa-file-download mr-2"></i>PDF</button></td>
                     </tr>`;
             });
         }
 
-        // عداد الأرقام
+        // عداد الأرقام (Animation)
         function animateValue(id, start, end, duration, suffix = "") {
             const obj = document.getElementById(id);
             let startTimestamp = null;
@@ -245,7 +276,7 @@
             window.requestAnimationFrame(step);
         }
 
-        window.addEventListener('load', initDashboard);
+        window.addEventListener('load', initApp);
     </script>
 </body>
 </html>
