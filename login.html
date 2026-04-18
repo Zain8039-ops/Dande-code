@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - Dande Code</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #f8faff 0%, #e8efff 100%);
+        }
+        .btn-purple-gradient {
+            background: linear-gradient(90deg, #9b4dff 0%, #3a7bd5 100%);
+        }
+        /* ضبط الحقول لتكون الكتابة والـ Placeholder من اليسار */
+        input {
+            text-align: left !important;
+            direction: ltr !important;
+        }
+        input::placeholder {
+            text-align: left !important;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-6">
+
+    <main class="w-full max-w-[460px] bg-white rounded-[45px] shadow-[0_20px_50px_rgba(0,0,0,0.05)] p-10 md:p-14 text-center">
+        
+        <div class="flex justify-center mb-8">
+            <div class="w-16 h-16 btn-purple-gradient rounded-[20px] flex items-center justify-center shadow-lg transform rotate-3">
+                <i class="fas fa-star text-white text-3xl"></i>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-center mb-3">
+            <h1 class="text-[32px] font-[800] text-[#5c6bc0] flex flex-row-reverse items-center gap-1">
+                
+                <span> ! Welcome Back</span>
+            </h1>
+        </div>
+        
+        <p class="text-[#7c86a1] text-lg font-semibold mb-10">Continue your learning journey</p>
+
+        <form id="loginForm" class="space-y-7">
+            
+            <div class="text-left" dir="ltr">
+                <label class="block text-[#444] font-bold mb-3 ml-2">Username</label>
+                <div class="relative">
+                    <i class="far fa-user absolute left-5 top-1/2 -translate-y-1/2 text-[#b0b8c9] text-xl"></i>
+                    <input type="text" placeholder="Your cool username" 
+                           class="w-full bg-[#fcfdfe] border-2 border-[#f0f2f5] rounded-[22px] py-5 pl-14 pr-5 outline-none focus:border-[#9b4dff] focus:ring-4 focus:ring-purple-50 transition-all text-[16px]">
+                </div>
+            </div>
+
+            <div class="text-left" dir="ltr">
+                <label class="block text-[#444] font-bold mb-3 ml-2">Password</label>
+                <div class="relative">
+                    <i class="fas fa-lock absolute left-5 top-1/2 -translate-y-1/2 text-[#b0b8c9] text-xl"></i>
+                    <input type="password" placeholder="Your secret password" 
+                           class="w-full bg-[#fcfdfe] border-2 border-[#f0f2f5] rounded-[22px] py-5 pl-14 pr-5 outline-none focus:border-[#9b4dff] focus:ring-4 focus:ring-purple-50 transition-all text-[16px]">
+                </div>
+            </div>
+
+            <button type="submit" class="w-full btn-purple-gradient text-white text-xl font-extrabold py-5 rounded-[22px] shadow-[0_10px_25px_rgba(155,77,255,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all mt-4 flex items-center justify-center gap-2">
+                <span class="flex flex-row-reverse items-center gap-1">
+                    <span>✨ </span>
+                    <span>Let's Code</span>
+                </span>
+            </button>
+        </form>
+
+        <div class="mt-10 space-y-4 text-center">
+            <a href="signup.html" class="block text-[#a855f7] font-extrabold text-[16px] hover:underline">New here? <span class="text-[#3a7bd5]">Create account</span></a>
+            <a href="forgot-password.html" class="block text-[#7c86a1] font-bold text-[15px] hover:text-[#5c6bc0]"> 🔑?Forgot password </a>
+        </div>
+
+        <div class="relative my-10">
+            <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-gray-100"></div></div>
+            <div class="relative flex justify-center text-sm"><span class="px-4 bg-white text-gray-300 font-bold">OR</span></div>
+        </div>
+
+        <div class="space-y-5">
+            <p class="text-[#7c86a1] font-bold">?Are you a parent or teacher</p>
+            <div class="flex gap-4" dir="ltr">
+                <a href="parent-login.html" class="flex-1 bg-blue-50 text-blue-600 font-extrabold py-4 rounded-[20px] hover:bg-blue-100 transition-colors text-center border border-blue-100">Parent Login</a>
+                <a href="teacher-login.html" class="flex-1 bg-green-50 text-green-600 font-extrabold py-4 rounded-[20px] hover:bg-green-100 transition-colors text-center border border-green-100">Teacher Login</a>
+            </div>
+        </div>
+    </main>
+
+    <a href="landing-page.html" class="mt-8 text-[#7c86a1] font-extrabold hover:text-[#5c6bc0] transition-colors" dir="ltr">
+        ← Back to Home
+    </a>
+
+</body>
+</html>
