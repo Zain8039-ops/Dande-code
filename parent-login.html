@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Login - Dande Code</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #f8faff 0%, #e8efff 100%);
+        }
+        .btn-blue-gradient {
+            background: linear-gradient(90deg, #3a7bd5 0%, #00d2ff 100%);
+        }
+        input {
+            text-align: left !important;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-6">
+
+    <main class="w-full max-w-[460px] bg-white rounded-[45px] shadow-[0_20px_50px_rgba(0,0,0,0.05)] p-10 md:p-14 text-center">
+        
+        <div class="flex justify-center mb-8">
+            <div class="w-16 h-16 bg-[#eef4ff] rounded-[22px] flex items-center justify-center shadow-sm border border-blue-100 transform -rotate-2">
+                <i class="fas fa-user-friends text-[#3a7bd5] text-3xl"></i>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-center mb-3">
+            <h1 class="text-[32px] font-[800] text-[#5c6bc0] flex flex-row-reverse items-center gap-1">
+                <span>!</span>
+                <span>Parent Login</span>
+            </h1>
+        </div>
+        <p class="text-[#7c86a1] text-lg font-semibold mb-10">Monitor your child's magic progress</p>
+
+        <form id="parentLoginForm" class="space-y-7">
+            
+            <div class="text-left">
+                <label class="block text-[#444] font-bold mb-3 ml-2">Email Address</label>
+                <div class="relative">
+                    <i class="far fa-envelope absolute left-5 top-1/2 -translate-y-1/2 text-[#b0b8c9] text-xl"></i>
+                    <input type="email" placeholder="Enter your email" 
+                           class="w-full bg-[#fcfdfe] border-2 border-[#f0f2f5] rounded-[22px] py-5 pl-14 pr-5 outline-none focus:border-[#3a7bd5] focus:ring-4 focus:ring-blue-50 transition-all text-[16px]">
+                </div>
+            </div>
+
+            <div class="text-left">
+                <label class="block text-[#444] font-bold mb-3 ml-2">Password</label>
+                <div class="relative">
+                    <i class="fas fa-lock absolute left-5 top-1/2 -translate-y-1/2 text-[#b0b8c9] text-xl"></i>
+                    <input type="password" placeholder="Enter your password" 
+                           class="w-full bg-[#fcfdfe] border-2 border-[#f0f2f5] rounded-[22px] py-5 pl-14 pr-5 outline-none focus:border-[#3a7bd5] focus:ring-4 focus:ring-blue-50 transition-all text-[16px]">
+                </div>
+            </div>
+
+           <a href="parent-dashboard.html" class="w-full btn-blue-gradient text-white text-xl font-extrabold py-5 rounded-[22px] shadow-[0_10px_25px_rgba(58,123,213,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all mt-4 flex items-center justify-center gap-2">
+                 <span class="flex flex-row-reverse items-center gap-1">
+                  <span> !</span>
+                  <span>Parent Access</span>
+                  </span>
+                      </a>
+                  </form>
+
+        <div class="mt-10 space-y-4">
+            <a href="forgot-password.html" class="block text-[#7c86a1] font-bold text-[15px] hover:text-[#3a7bd5]">Forgot your password? 🔑</a>
+            <div class="relative my-8">
+                <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-gray-100"></div></div>
+                <div class="relative flex justify-center text-sm"><span class="px-4 bg-white text-gray-300 font-bold text-xs uppercase tracking-widest">Student Area</span></div>
+            </div>
+            <a href="login.html" class="block text-[#a855f7] font-extrabold text-[16px] hover:underline">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Student Login
+            </a>
+        </div>
+    </main>
+
+    <p class="mt-8 text-[#b0b8c9] font-bold text-sm">
+        Dande Code &copy; 2026 - Educational Portal
+    </p>
+
+</body>
+</html>
