@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teacher Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-[#f7f5ff] font-sans text-[#0f172a]">
+
+  <!-- Header -->
+  <div class="w-full bg-[#e8f5e9] border-b border-[#d7eadf]">
+    <div class="max-w-[1400px] mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <div class="w-[46px] h-[46px] rounded-[14px] bg-[#2e7d32] flex items-center justify-center">
+          <i data-feather="star" class="w-6 h-6 text-white"></i>
+        </div>
+        <div>
+          <h1 class="text-[20px] font-bold text-[#1b3d2f]">Teacher Dashboard</h1>
+          <p class="text-[14px] text-[#5e7f70]">Welcome back, Ms. Anderson!</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button class="bg-[#2e7d32] text-white px-6 py-2 rounded-full text-[15px] font-medium">
+          + New Assignment
+        </button>
+        <div class="w-[38px] h-[38px] rounded-full bg-[#dff5e6] flex items-center justify-center text-[#2e7d32]">
+          <i data-feather="home" class="w-4 h-4"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-[1400px] mx-auto px-6 py-8">
+
+    <!-- Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+      <div class="bg-white rounded-[24px] p-6 shadow">
+        <div class="w-[52px] h-[52px] rounded-full bg-[#eee6ff] flex items-center justify-center mb-6">
+          <i data-feather="users" class="w-6 h-6 text-[#9333ea]"></i>
+        </div>
+        <h2 class="text-[36px] font-bold">72</h2>
+        <p class="text-[16px] text-gray-500 mt-1">Total Students</p>
+      </div>
+
+      <div class="bg-white rounded-[24px] p-6 shadow">
+        <div class="w-[52px] h-[52px] rounded-full bg-[#e0ecff] flex items-center justify-center mb-6">
+          <i data-feather="book-open" class="w-6 h-6 text-[#2563eb]"></i>
+        </div>
+        <h2 class="text-[36px] font-bold">9</h2>
+        <p class="text-[16px] text-gray-500 mt-1">Active Assignments</p>
+      </div>
+
+      <div class="bg-white rounded-[24px] p-6 shadow">
+        <div class="w-[52px] h-[52px] rounded-full bg-[#def7ec] flex items-center justify-center mb-6">
+          <i data-feather="trending-up" class="w-6 h-6 text-[#16a34a]"></i>
+        </div>
+        <h2 class="text-[36px] font-bold">65%</h2>
+        <p class="text-[16px] text-gray-500 mt-1">Avg Completion Rate</p>
+      </div>
+
+      <div class="bg-white rounded-[24px] p-6 shadow">
+        <div class="w-[52px] h-[52px] rounded-full bg-[#fde7d7] flex items-center justify-center mb-6">
+          <i data-feather="clock" class="w-6 h-6 text-[#f97316]"></i>
+        </div>
+        <h2 class="text-[36px] font-bold">3</h2>
+        <p class="text-[16px] text-gray-500 mt-1">Sessions This Week</p>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="mb-10">
+      <h2 class="text-[22px] font-bold mb-6">Quick Actions</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-gradient-to-r from-[#8b5cf6] to-[#a855f7] text-white p-6 rounded-[20px] shadow">
+          <i data-feather="plus" class="w-7 h-7 mb-5"></i>
+          <p class="text-[18px] font-medium">Create Assignment</p>
+        </div>
+
+        <div class="bg-gradient-to-r from-[#3b82f6] to-[#2563eb] text-white p-6 rounded-[20px] shadow">
+          <i data-feather="users" class="w-7 h-7 mb-5"></i>
+          <p class="text-[18px] font-medium">Manage Classes</p>
+        </div>
+
+        <div class="bg-gradient-to-r from-[#22c55e] to-[#16a34a] text-white p-6 rounded-[20px] shadow">
+          <i data-feather="calendar" class="w-7 h-7 mb-5"></i>
+          <p class="text-[18px] font-medium">Schedule Session</p>
+        </div>
+
+        <div class="bg-gradient-to-r from-[#f97316] to-[#ea580c] text-white p-6 rounded-[20px] shadow">
+          <i data-feather="message-square" class="w-7 h-7 mb-5"></i>
+          <p class="text-[18px] font-medium">Send Feedback</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- My Classes -->
+    <div class="bg-white rounded-[30px] p-8 shadow mb-10">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-[22px] font-bold">My Classes</h2>
+        <span class="text-[#9333ea] text-[16px] font-medium">View All</span>
+      </div>
+
+      <div class="space-y-8">
+
+        <div class="bg-[#f7f7fb] rounded-[24px] p-6">
+          <div class="flex items-start justify-between mb-6">
+            <div class="flex items-center gap-5">
+              <div class="w-[88px] h-[88px] rounded-[28px] bg-gradient-to-br from-[#c026ff] to-[#7c3aed] text-white flex items-center justify-center text-[28px] font-semibold">
+                3A
+              </div>
+              <div>
+                <h3 class="text-[22px] font-bold">Grade 3A</h3>
+                <p class="text-[16px] text-gray-500 mt-1">24 students</p>
+              </div>
+            </div>
+            <i data-feather="chevron-right" class="w-7 h-7 text-gray-400"></i>
+          </div>
+
+          <div class="grid grid-cols-2 gap-6">
+            <div class="bg-white rounded-[20px] p-6">
+              <h4 class="text-[26px] font-bold">3</h4>
+              <p class="text-[14px] text-gray-500 mt-1">Active Assignments</p>
+            </div>
+            <div class="bg-white rounded-[20px] p-6">
+              <h4 class="text-[26px] font-bold">72%</h4>
+              <p class="text-[14px] text-gray-500 mt-1">Avg Progress</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#f7f7fb] rounded-[24px] p-6">
+          <div class="flex items-start justify-between mb-6">
+            <div class="flex items-center gap-5">
+              <div class="w-[88px] h-[88px] rounded-[28px] bg-gradient-to-br from-[#3b82f6] to-[#2563eb] text-white flex items-center justify-center text-[28px] font-semibold">
+                3B
+              </div>
+              <div>
+                <h3 class="text-[22px] font-bold">Grade 3B</h3>
+                <p class="text-[16px] text-gray-500 mt-1">22 students</p>
+              </div>
+            </div>
+            <i data-feather="chevron-right" class="w-7 h-7 text-gray-400"></i>
+          </div>
+
+          <div class="grid grid-cols-2 gap-6">
+            <div class="bg-white rounded-[20px] p-6">
+              <h4 class="text-[26px] font-bold">2</h4>
+              <p class="text-[14px] text-gray-500 mt-1">Active Assignments</p>
+            </div>
+            <div class="bg-white rounded-[20px] p-6">
+              <h4 class="text-[26px] font-bold">65%</h4>
+              <p class="text-[14px] text-gray-500 mt-1">Avg Progress</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#f7f7fb] rounded-[24px] p-6">
+          <div class="flex items-start justify-between mb-6">
+            <div class="flex items-center gap-5">
+              <div class="w-[88px] h-[88px] rounded-[28px] bg-gradient-to-br from-[#22c55e] to-[#16a34a] text-white flex items-center justify-center text-[28px] font-semibold">
+                4A
+              </div>
+              <div>
+                <h3 class="text-[22px] font-bold">Grade 4A</h3>
+                <p class="text-[16px] text-gray-500 mt-1">26 students</p>
+              </div>
+            </div>
+            <i data-feather="chevron-right" class="w-7 h-7 text-gray-400"></i>
+          </div>
+
+          <div class="grid grid-cols-2 gap-6">
+            <div class="bg-white rounded-[20px] p-6">
+              <h4 class="text-[26px] font-bold">4</h4>
+              <p class="text-[14px] text-gray-500 mt-1">Active Assignments</p>
+            </div>
+            <div class="bg-white rounded-[20px] p-6">
+              <h4 class="text-[26px] font-bold">58%</h4>
+              <p class="text-[14px] text-gray-500 mt-1">Avg Progress</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Recent Submissions -->
+    <div class="bg-white rounded-[30px] p-8 shadow mb-10">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-[22px] font-bold">Recent Submissions</h2>
+        <span class="text-[#9333ea] text-[16px] font-medium">View All</span>
+      </div>
+
+      <div class="space-y-6">
+
+        <div class="bg-[#f7f7fb] rounded-[24px] p-6 flex items-center justify-between">
+          <div class="flex items-center gap-5">
+            <div class="w-[88px] h-[88px] rounded-[28px] bg-[#ecebff] flex items-center justify-center text-[36px]">
+              👧
+            </div>
+            <div>
+              <h3 class="text-[22px] font-bold">Emma Johnson</h3>
+              <p class="text-[18px] text-gray-500 mt-1">Loop Adventures</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-5">
+            <div class="text-center">
+              <h4 class="text-[30px] font-bold text-[#22c55e]">95%</h4>
+              <p class="text-[14px] text-gray-500">Score</p>
+            </div>
+            <i data-feather="check-circle" class="w-12 h-12 text-[#22c55e]"></i>
+          </div>
+        </div>
+
+        <div class="bg-[#f7f7fb] rounded-[24px] p-6 flex items-center justify-between">
+          <div class="flex items-center gap-5">
+            <div class="w-[88px] h-[88px] rounded-[28px] bg-[#ecebff] flex items-center justify-center text-[36px]">
+              👦
+            </div>
+            <div>
+              <h3 class="text-[22px] font-bold">Liam Smith</h3>
+              <p class="text-[18px] text-gray-500 mt-1">Pattern Cards</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-5">
+            <div class="text-center">
+              <h4 class="text-[30px] font-bold text-[#22c55e]">88%</h4>
+              <p class="text-[14px] text-gray-500">Score</p>
+            </div>
+            <i data-feather="check-circle" class="w-12 h-12 text-[#22c55e]"></i>
+          </div>
+        </div>
+
+        <div class="bg-[#f7f7fb] rounded-[24px] p-6 flex items-center justify-between">
+          <div class="flex items-center gap-5">
+            <div class="w-[88px] h-[88px] rounded-[28px] bg-[#ecebff] flex items-center justify-center text-[36px]">
+              👧
+            </div>
+            <div>
+              <h3 class="text-[22px] font-bold">Olivia Davis</h3>
+              <p class="text-[18px] text-gray-500 mt-1">Sequence Challenge</p>
+            </div>
+          </div>
+
+          <div class="bg-[#f4eeb3] text-[#9a6700] rounded-[24px] px-10 py-6 text-[20px] font-medium">
+            Pending Review
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Upcoming Sessions -->
+    <div class="bg-white rounded-[30px] p-8 shadow mb-10">
+      <div class="flex items-center gap-4 mb-8">
+        <i data-feather="calendar" class="w-9 h-9 text-[#9333ea]"></i>
+        <h2 class="text-[22px] font-bold">Upcoming Sessions</h2>
+      </div>
+
+      <div class="space-y-6">
+
+        <div class="bg-[#f2f2fc] rounded-[26px] p-8">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <h3 class="text-[22px] font-bold">Introduction to Loops</h3>
+              <p class="text-[18px] text-gray-500 mt-3">Grade 3A</p>
+            </div>
+            <span class="bg-[#eed8ff] text-[#9333ea] px-6 py-2 rounded-full text-[16px]">Live Session</span>
+          </div>
+
+          <div class="flex items-center gap-3 text-gray-500 text-[18px]">
+            <i data-feather="clock" class="w-7 h-7"></i>
+            <span>Tomorrow, 10:00 AM</span>
+          </div>
+        </div>
+
+        <div class="bg-[#f2f2fc] rounded-[26px] p-8">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <h3 class="text-[22px] font-bold">Pattern Recognition</h3>
+              <p class="text-[18px] text-gray-500 mt-3">Grade 3B</p>
+            </div>
+            <span class="bg-[#eed8ff] text-[#9333ea] px-6 py-2 rounded-full text-[16px]">Workshop</span>
+          </div>
+
+          <div class="flex items-center gap-3 text-gray-500 text-[18px]">
+            <i data-feather="clock" class="w-7 h-7"></i>
+            <span>Tomorrow, 2:00 PM</span>
+          </div>
+        </div>
+
+        <div class="bg-[#f2f2fc] rounded-[26px] p-8">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <h3 class="text-[22px] font-bold">Functions & Logic</h3>
+              <p class="text-[18px] text-gray-500 mt-3">Grade 4A</p>
+            </div>
+            <span class="bg-[#eed8ff] text-[#9333ea] px-6 py-2 rounded-full text-[16px]">Live Session</span>
+          </div>
+
+          <div class="flex items-center gap-3 text-gray-500 text-[18px]">
+            <i data-feather="clock" class="w-7 h-7"></i>
+            <span>Friday, 11:00 AM</span>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="w-full mt-8 bg-gradient-to-r from-[#a21caf] to-[#c026ff] text-white py-5 rounded-[24px] text-[24px] font-medium">
+        View Calendar
+      </button>
+    </div>
+
+    <!-- Top Performers -->
+    <div class="bg-white rounded-[30px] p-8 shadow mb-10">
+      <div class="flex items-center gap-4 mb-8">
+        <i data-feather="award" class="w-9 h-9 text-[#eab308]"></i>
+        <h2 class="text-[22px] font-bold">Top Performers</h2>
+      </div>
+
+      <div class="space-y-8">
+
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-5">
+            <div class="w-[78px] h-[78px] rounded-full bg-[#facc15] text-white flex items-center justify-center text-[32px] font-bold">1</div>
+            <div>
+              <h3 class="text-[20px] font-bold">Emma Johnson</h3>
+              <p class="text-[16px] text-gray-500 mt-1">Grade 3A</p>
+            </div>
+          </div>
+          <div class="text-[30px] font-bold">98%</div>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-5">
+            <div class="w-[78px] h-[78px] rounded-full bg-[#a8b0c6] text-white flex items-center justify-center text-[32px] font-bold">2</div>
+            <div>
+              <h3 class="text-[20px] font-bold">Noah Williams</h3>
+              <p class="text-[16px] text-gray-500 mt-1">Grade 4A</p>
+            </div>
+          </div>
+          <div class="text-[30px] font-bold">96%</div>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-5">
+            <div class="w-[78px] h-[78px] rounded-full bg-[#fb923c] text-white flex items-center justify-center text-[32px] font-bold">3</div>
+            <div>
+              <h3 class="text-[20px] font-bold">Sophia Brown</h3>
+              <p class="text-[16px] text-gray-500 mt-1">Grade 3B</p>
+            </div>
+          </div>
+          <div class="text-[30px] font-bold">94%</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Teaching Resources -->
+    <div class="bg-[#08ad51] rounded-[30px] p-8 shadow mb-10 text-white">
+      <h2 class="text-[22px] font-bold mb-8">Teaching Resources</h2>
+      <p class="text-[18px] leading-9 max-w-[780px] mb-10">
+        Access lesson plans, worksheets, and teaching guides
+      </p>
+
+      <button class="w-full bg-white text-[#16a34a] py-5 rounded-[24px] text-[24px] font-medium">
+        Browse Resources
+      </button>
+    </div>
+
+  </div>
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+  feather.replace()
+</script> 
+</body>
+</html>
