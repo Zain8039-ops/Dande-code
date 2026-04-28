@@ -6,24 +6,16 @@
   <title>Teacher Portal</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="min-h-screen bg-[#cfeedd] flex items-center justify-center p-6">
 
   <div class="relative w-full max-w-[390px]">
 
-    <!-- top left paper -->
-    <div class="absolute -top-5 -left-5 rotate-[28deg] text-[28px] select-none">
-      📄
-    </div>
+    <div class="absolute -top-5 -left-5 rotate-[28deg] text-[28px] select-none">📄</div>
+    <div class="absolute -bottom-4 -right-4 text-[30px] select-none">📗</div>
 
-    <!-- bottom right book -->
-    <div class="absolute -bottom-4 -right-4 text-[30px] select-none">
-      📗
-    </div>
-
-    <!-- main card -->
     <div class="bg-white rounded-[24px] shadow-[0_18px_35px_rgba(0,0,0,0.12)] px-8 pt-7 pb-8">
 
-      <!-- top icon -->
       <div class="relative flex justify-center mb-5">
         <div class="w-[78px] h-[78px] rounded-[22px] bg-[#08b150] flex items-center justify-center text-[38px] shadow-[0_10px_18px_rgba(8,177,80,0.22)]">
           👩‍🏫
@@ -34,7 +26,6 @@
         </div>
       </div>
 
-      <!-- title -->
       <h1 class="text-center text-[27px] font-bold text-[#111827] mb-1">
         Teacher Portal
       </h1>
@@ -43,7 +34,6 @@
         Empowering the next generation of coders
       </p>
 
-      <!-- top boxes -->
       <div class="grid grid-cols-3 gap-3 mb-7">
         <div class="rounded-[18px] border border-[#b9ebca] bg-[#eff9f2] h-[102px] flex flex-col items-center justify-center text-center px-2">
           <div class="text-[20px] mb-1 text-[#16a34a]">👥</div>
@@ -61,33 +51,24 @@
         </div>
       </div>
 
-      <!-- email -->
       <div class="mb-4">
         <label class="block text-[14px] text-[#374151] font-medium mb-2">Email Address</label>
         <div class="h-[50px] rounded-[16px] border border-[#e5e7eb] bg-[#f9fafb] px-4 flex items-center gap-3">
           <span class="text-[18px] text-[#9ca3af]">✉️</span>
-          <input
-            type="email"
-            placeholder="teacher@school.com"
-            class="w-full bg-transparent outline-none text-[15px] text-[#6b7280] placeholder:text-[#9ca3af]"
-          />
+          <input type="email" placeholder="teacher@school.com"
+            class="w-full bg-transparent outline-none text-[15px] text-[#6b7280] placeholder:text-[#9ca3af]" />
         </div>
       </div>
 
-      <!-- password -->
       <div class="mb-4">
         <label class="block text-[14px] text-[#374151] font-medium mb-2">Password</label>
         <div class="h-[50px] rounded-[16px] border border-[#e5e7eb] bg-[#f9fafb] px-4 flex items-center gap-3">
           <span class="text-[18px] text-[#9ca3af]">🔒</span>
-          <input
-            type="password"
-            placeholder="Enter your password"
-            class="w-full bg-transparent outline-none text-[15px] text-[#6b7280] placeholder:text-[#9ca3af]"
-          />
+          <input type="password" placeholder="Enter your password"
+            class="w-full bg-transparent outline-none text-[15px] text-[#6b7280] placeholder:text-[#9ca3af]" />
         </div>
       </div>
 
-      <!-- remember / forgot -->
       <div class="flex items-center justify-between text-[13px] mb-5">
         <label class="flex items-center gap-2 text-[#4b5563]">
           <input type="checkbox" class="w-4 h-4" />
@@ -97,32 +78,31 @@
         <span class="text-[#169b52] cursor-pointer">Forgot password?</span>
       </div>
 
-      <!-- login button -->
-      <button class="w-full h-[50px] rounded-[16px] bg-[#08a94f] text-white text-[17px] font-semibold shadow-[0_10px_18px_rgba(8,169,79,0.25)] mb-7">
+      <a href="teacher-dashboard.html"
+         class="w-full h-[50px] rounded-[16px] bg-[#08a94f] text-white text-[17px] font-semibold shadow-[0_10px_18px_rgba(8,169,79,0.25)] mb-7 flex items-center justify-center">
         Login to Portal →
-      </button>
+      </a>
 
-      <!-- divider -->
       <div class="flex items-center gap-3 mb-6">
         <div class="h-[1px] bg-[#e5e7eb] flex-1"></div>
         <span class="text-[12px] text-[#9ca3af]">or</span>
         <div class="h-[1px] bg-[#e5e7eb] flex-1"></div>
       </div>
 
-      <!-- bottom buttons -->
       <div class="space-y-3 mb-6">
-        <button class="w-full h-[42px] rounded-[16px] bg-[#edf3ff] text-[#2563eb] text-[15px] font-medium">
+        <a href="parent-dashboard.html"
+           class="w-full h-[42px] rounded-[16px] bg-[#edf3ff] text-[#2563eb] text-[15px] font-medium flex items-center justify-center">
           👨‍👩‍👧 Login as Parent
-        </button>
+        </a>
 
-        <button class="w-full h-[42px] rounded-[16px] bg-[#f5ecfb] text-[#9333ea] text-[15px] font-medium">
+        <a href="signup.html"
+           class="w-full h-[42px] rounded-[16px] bg-[#f5ecfb] text-[#9333ea] text-[15px] font-medium flex items-center justify-center">
           🎓 Student Login
-        </button>
+        </a>
       </div>
 
-      <!-- back home -->
       <div class="text-center text-[13px] text-[#6b7280]">
-        ← Back to Home
+        <a href="index.html" class="hover:underline">← Back to Home</a>
       </div>
 
     </div>
